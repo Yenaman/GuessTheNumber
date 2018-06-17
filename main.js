@@ -64,6 +64,7 @@ bot.on('message', message => {
                         VIEW_CHANNEL: true,
                         SEND_MESSAGES: true
                     });
+		    number = Math.floor(Math.random()* Math.floor(limit));
                 }
 		message.channel.send(`<@${message.author.id}> found the correct number! It was ${number}. The channel will be unlocked in 1 minute.`);
                 setTimeout(unlock, 60000);
