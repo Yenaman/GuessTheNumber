@@ -11,20 +11,20 @@ let ownerID = 'put your own user ID here';
 let channelID = 'put the channel ID where you want the game';
 let token = 'put your bot's token here'
 
-bot.on('message', message => {
-    if(message.content.startsWith("/number")) {
-        if(!message.author.id == ownerID) return message.reply(`You don't have the permission to run this command.`);
+bot.on(`message`, message => {
+    if(message.content.startsWith(`/number`)) {
+        if(!message.author.id == ownerID) return message.reply(`You don\'t have the permission to run this command.`);
         const args = message.content.slice(1).trim().split(/ +/g);
         const newNumb = args.slice(1).join(" ");
-        if(!newNumb) return message.reply(`You didn't specified a new number.`);
+        if(!newNumb) return message.reply(`You didn\'t specified a new number.`);
         number = newNumb;
         message.reply(`The number has been successfully changed to ${newNumb}!`);
     }
-	if(message.content.startsWith("/limit")) {
-        if(!message.author.id == ownerID) return message.reply(`You don't have the permission to run this command.`);
+	if(message.content.startsWith(`/limit`)) {
+        if(!message.author.id == ownerID) return message.reply(`You don\'t have the permission to run this command.`);
         const args = message.content.slice(1).trim().split(/ +/g);
         const newLim = args.slice(1).join(" ");
-        if(!newLim) return message.reply(`You didn't specified a new limit.`);
+        if(!newLim) return message.reply(`You didn\'t specified a new limit.`);
         limit = newLim;
         message.reply(`The limit has been successfully changed to ${newLim} !`);
     }
@@ -35,13 +35,13 @@ bot.on('message', message => {
             if(message.content < 1) return message.reply(`The number cannot be negative! Try again`);
             if(message.content == number) {
                 var everyone =  message.guild.id;
-                bot.channels.find("id", channelID).overwritePermissions(everyone, {
+                bot.channels.find(`id`, channelID).overwritePermissions(everyone, {
                     VIEW_CHANNEL: true,
                     SEND_MESSAGES: false
                 });
                 message.channel.send(`<@${message.author.id}> found the correct number! It was ${number}. The channel will be unlocked in 1 minute.`);
                 function unlock() {
-                    bot.channels.find("id", channelID).overwritePermissions(everyone, {
+                    bot.channels.find(`id`, channelID).overwritePermissions(everyone, {
                         VIEW_CHANNEL: true,
                         SEND_MESSAGES: true
                     });
