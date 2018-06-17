@@ -12,5 +12,17 @@ Run a console and do `node main` aaand now the bot is working!
 
 Have fun with your new bot!
 
+## Commands
+• **/viewnumb** Displays the number to guess
+
+• **/viewlim** Displays the current limit
+
+• **/reroll** Rolls a new number and sends it in Direct Message
+
+• **/number** Changes the number to a custom value
+
+• **/limit** Changes the limit to a custom value
+
+
 ### Let me know if there is any issue
 ## Discord : Yenaman#6961
