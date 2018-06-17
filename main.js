@@ -12,6 +12,13 @@ let channelID = 'put the channel ID where you want the game';
 let token = `put your bot's token here`
 
 bot.on('message', message => {
+    if(message.content == "/restart") {
+        if(!message.author.id == ownerID) return message.reply(`You don't have the permission to run this command.`);
+        message.react('✅');
+        setTimeout(function() {
+        	process.exit(0);
+        }, 1000);
+    }
     if(message.content == "/viewnumb") {
         if(!message.author.id == ownerID) return message.reply(`You don't have the permission to run this command.`);
         message.reply(`The current number is ${number}`);
