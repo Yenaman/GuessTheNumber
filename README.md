@@ -23,6 +23,7 @@ Have fun with your new bot!
 
 • **/limit** Changes the limit to a custom value
 
+• **/restart** Restarts the bot
 
 ### Let me know if there is any issue
 ## Discord : Yenaman#6961
