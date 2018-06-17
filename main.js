@@ -10,6 +10,7 @@ let limit = 2000; // You can change it through /limit command
 let ownerID = 'put your own user ID here';
 let channelID = 'put the channel ID where you want the game';
 let token = `put your bot's token here`
+
 bot.on('message', message => {
     if(message.content.startsWith("/number")) {
         if(!message.author.id == ownerID) return message.reply(`You don't have the permission to run this command.`);
